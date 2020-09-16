@@ -1,4 +1,4 @@
-module ldapstrprep
+module github.com/tardevnull/ldapstrprep
 
 go 1.14
 
