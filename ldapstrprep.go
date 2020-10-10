@@ -164,890 +164,890 @@ func newProhibitError(c rune) error {
 
 //isProhibitedCharacter reports whether c is prohibited code points.
 //https://tools.ietf.org/html/rfc4518#section-2.4
-func isProhibitedCharacter(c rune) bool {
+func isProhibitedCharacter(c rune) (b bool, err error) {
 	switch {
 	//https://tools.ietf.org/html/rfc4518#section-2.4 RFC3454 Table A.1
 	case c == 0X0221:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0234) && (c <= 0X024F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X02AE) && (c <= 0X02AF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X02EF) && (c <= 0X02FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0350) && (c <= 0X035F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0370) && (c <= 0X0373):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0376) && (c <= 0X0379):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X037B) && (c <= 0X037D):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X037F) && (c <= 0X0383):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X038B:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X038D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X03A2:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X03CF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X03F7) && (c <= 0X03FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0487:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X04CF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X04F6) && (c <= 0X04F7):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X04FA) && (c <= 0X04FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0510) && (c <= 0X0530):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0557) && (c <= 0X0558):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0560:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0588:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X058B) && (c <= 0X0590):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X05A2:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X05BA:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X05C5) && (c <= 0X05CF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X05EB) && (c <= 0X05EF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X05F5) && (c <= 0X060B):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X060D) && (c <= 0X061A):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X061C) && (c <= 0X061E):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0620:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X063B) && (c <= 0X063F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0656) && (c <= 0X065F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X06EE) && (c <= 0X06EF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X06FF:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X070E:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X072D) && (c <= 0X072F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X074B) && (c <= 0X077F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X07B2) && (c <= 0X0900):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0904:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X093A) && (c <= 0X093B):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X094E) && (c <= 0X094F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0955) && (c <= 0X0957):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0971) && (c <= 0X0980):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0984:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X098D) && (c <= 0X098E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0991) && (c <= 0X0992):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X09A9:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X09B1:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09B3) && (c <= 0X09B5):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09BA) && (c <= 0X09BB):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X09BD:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09C5) && (c <= 0X09C6):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09C9) && (c <= 0X09CA):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09CE) && (c <= 0X09D6):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09D8) && (c <= 0X09DB):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X09DE:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09E4) && (c <= 0X09E5):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X09FB) && (c <= 0X0A01):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A03) && (c <= 0X0A04):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A0B) && (c <= 0X0A0E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A11) && (c <= 0X0A12):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A29:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A31:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A34:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A37:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A3A) && (c <= 0X0A3B):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A3D:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A43) && (c <= 0X0A46):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A49) && (c <= 0X0A4A):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A4E) && (c <= 0X0A58):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A5D:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A5F) && (c <= 0X0A65):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0A75) && (c <= 0X0A80):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A84:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A8C:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A8E:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0A92:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0AA9:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0AB1:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0AB4:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0ABA) && (c <= 0X0ABB):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0AC6:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0ACA:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0ACE) && (c <= 0X0ACF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0AD1) && (c <= 0X0ADF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0AE1) && (c <= 0X0AE5):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0AF0) && (c <= 0X0B00):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B04:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B0D) && (c <= 0X0B0E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B11) && (c <= 0X0B12):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B29:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B31:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B34) && (c <= 0X0B35):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B3A) && (c <= 0X0B3B):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B44) && (c <= 0X0B46):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B49) && (c <= 0X0B4A):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B4E) && (c <= 0X0B55):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B58) && (c <= 0X0B5B):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B5E:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B62) && (c <= 0X0B65):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B71) && (c <= 0X0B81):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B84:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B8B) && (c <= 0X0B8D):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B91:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0B96) && (c <= 0X0B98):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B9B:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0B9D:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BA0) && (c <= 0X0BA2):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BA5) && (c <= 0X0BA7):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BAB) && (c <= 0X0BAD):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0BB6:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BBA) && (c <= 0X0BBD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BC3) && (c <= 0X0BC5):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0BC9:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BCE) && (c <= 0X0BD6):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BD8) && (c <= 0X0BE6):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0BF3) && (c <= 0X0C00):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C04:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C0D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C11:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C29:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C34:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0C3A) && (c <= 0X0C3D):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C45:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C49:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0C4E) && (c <= 0X0C54):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0C57) && (c <= 0X0C5F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0C62) && (c <= 0X0C65):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0C70) && (c <= 0X0C81):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C84:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C8D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0C91:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0CA9:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0CB4:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0CBA) && (c <= 0X0CBD):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0CC5:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0CC9:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0CCE) && (c <= 0X0CD4):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0CD7) && (c <= 0X0CDD):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0CDF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0CE2) && (c <= 0X0CE5):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0CF0) && (c <= 0X0D01):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D04:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D0D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D11:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D29:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D3A) && (c <= 0X0D3D):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D44) && (c <= 0X0D45):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D49:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D4E) && (c <= 0X0D56):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D58) && (c <= 0X0D5F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D62) && (c <= 0X0D65):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D70) && (c <= 0X0D81):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0D84:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0D97) && (c <= 0X0D99):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0DB2:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0DBC:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0DBE) && (c <= 0X0DBF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0DC7) && (c <= 0X0DC9):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0DCB) && (c <= 0X0DCE):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0DD5:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0DD7:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0DE0) && (c <= 0X0DF1):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0DF5) && (c <= 0X0E00):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0E3B) && (c <= 0X0E3E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0E5C) && (c <= 0X0E80):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0E83:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0E85) && (c <= 0X0E86):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0E89:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0E8B) && (c <= 0X0E8C):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0E8E) && (c <= 0X0E93):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0E98:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EA0:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EA4:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EA6:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0EA8) && (c <= 0X0EA9):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EAC:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EBA:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0EBE) && (c <= 0X0EBF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EC5:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0EC7:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0ECE) && (c <= 0X0ECF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0EDA) && (c <= 0X0EDB):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0EDE) && (c <= 0X0EFF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0F48:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0F6B) && (c <= 0X0F70):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0F8C) && (c <= 0X0F8F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0F98:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0FBD:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0FCD) && (c <= 0X0FCE):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X0FD0) && (c <= 0XFFF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1022:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1028:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X102B:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1033) && (c <= 0X1035):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X103A) && (c <= 0X103F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X105A) && (c <= 0X109F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10C6) && (c <= 0X10CF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10F9) && (c <= 0X10FA):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10FC) && (c <= 0X10FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X115A) && (c <= 0X115E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X11A3) && (c <= 0X11A7):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X11FA) && (c <= 0X11FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1207:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1247:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1249:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X124E) && (c <= 0X124F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1257:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1259:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X125E) && (c <= 0X125F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1287:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1289:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X128E) && (c <= 0X128F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12AF:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12B1:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X12B6) && (c <= 0X12B7):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12BF:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12C1:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X12C6) && (c <= 0X12C7):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12CF:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12D7:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X12EF:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X130F:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1311:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1316) && (c <= 0X1317):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X131F:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1347:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X135B) && (c <= 0X1360):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X137D) && (c <= 0X139F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X13F5) && (c <= 0X1400):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1677) && (c <= 0X167F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X169D) && (c <= 0X169F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X16F1) && (c <= 0X16FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X170D:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1715) && (c <= 0X171F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1737) && (c <= 0X173F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1754) && (c <= 0X175F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X176D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1771:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1774) && (c <= 0X177F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X17DD) && (c <= 0X17DF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X17EA) && (c <= 0X17FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X180F:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X181A) && (c <= 0X181F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1878) && (c <= 0X187F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X18AA) && (c <= 0X1DFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1E9C) && (c <= 0X1E9F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1EFA) && (c <= 0X1EFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1F16) && (c <= 0X1F17):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1F1E) && (c <= 0X1F1F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1F46) && (c <= 0X1F47):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1F4E) && (c <= 0X1F4F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1F58:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1F5A:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1F5C:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1F5E:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1F7E) && (c <= 0X1F7F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1FB5:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1FC5:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1FD4) && (c <= 0X1FD5):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1FDC:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1FF0) && (c <= 0X1FF1):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1FF5:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1FFF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2053) && (c <= 0X2056):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2058) && (c <= 0X205E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2064) && (c <= 0X2069):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2072) && (c <= 0X2073):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X208F) && (c <= 0X209F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X20B2) && (c <= 0X20CF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X20EB) && (c <= 0X20FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X213B) && (c <= 0X213C):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X214C) && (c <= 0X2152):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2184) && (c <= 0X218F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X23CF) && (c <= 0X23FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2427) && (c <= 0X243F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X244B) && (c <= 0X245F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X24FF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2614) && (c <= 0X2615):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X2618:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X267E) && (c <= 0X267F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X268A) && (c <= 0X2700):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X2705:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X270A) && (c <= 0X270B):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X2728:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X274C:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X274E:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2753) && (c <= 0X2755):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X2757:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X275F) && (c <= 0X2760):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2795) && (c <= 0X2797):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X27B0:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X27BF) && (c <= 0X27CF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X27EC) && (c <= 0X27EF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2B00) && (c <= 0X2E7F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X2E9A:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2EF4) && (c <= 0X2EFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2FD6) && (c <= 0X2FEF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2FFC) && (c <= 0X2FFF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X3040:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X3097) && (c <= 0X3098):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X3100) && (c <= 0X3104):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X312D) && (c <= 0X3130):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X318F:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X31B8) && (c <= 0X31EF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X321D) && (c <= 0X321F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X3244) && (c <= 0X3250):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X327C) && (c <= 0X327E):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X32CC) && (c <= 0X32CF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X32FF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X3377) && (c <= 0X337A):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X33DE) && (c <= 0X33DF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X33FF:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X4DB6) && (c <= 0X4DFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X9FA6) && (c <= 0X9FFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XA48D) && (c <= 0XA48F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XA4C7) && (c <= 0XABFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XD7A4) && (c <= 0XD7FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFA2E) && (c <= 0XFA2F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFA6B) && (c <= 0XFAFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFB07) && (c <= 0XFB12):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFB18) && (c <= 0XFB1C):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFB37:
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFB3D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFB3F:
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFB42:
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFB45:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFBB2) && (c <= 0XFBD2):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFD40) && (c <= 0XFD4F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFD90) && (c <= 0XFD91):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFDC8) && (c <= 0XFDCF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFDFD) && (c <= 0XFDFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFE10) && (c <= 0XFE1F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFE24) && (c <= 0XFE2F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFE47) && (c <= 0XFE48):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFE53:
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFE67:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFE6C) && (c <= 0XFE6F):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFE75:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFEFD) && (c <= 0XFEFE):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFF00:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFBF) && (c <= 0XFFC1):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFC8) && (c <= 0XFFC9):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFD0) && (c <= 0XFFD1):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFD8) && (c <= 0XFFD9):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFDD) && (c <= 0XFFDF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XFFE7:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFEF) && (c <= 0XFFF8):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10000) && (c <= 0X102FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1031F:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10324) && (c <= 0X1032F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1034B) && (c <= 0X103FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10426) && (c <= 0X10427):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1044E) && (c <= 0X1CFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D0F6) && (c <= 0X1D0FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D127) && (c <= 0X1D129):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D1DE) && (c <= 0X1D3FF):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D455:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D49D:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D4A0) && (c <= 0X1D4A1):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D4A3) && (c <= 0X1D4A4):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D4A7) && (c <= 0X1D4A8):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D4AD:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D4BA:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D4BC:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D4C1:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D4C4:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D506:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D50B) && (c <= 0X1D50C):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D515:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D51D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D53A:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D53F:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D545:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D547) && (c <= 0X1D549):
-		return true
+		return true, newProhibitError(c)
 	case c == 0X1D551:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D6A4) && (c <= 0X1D6A7):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D7CA) && (c <= 0X1D7CD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1D800) && (c <= 0X1FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2A6D7) && (c <= 0X2F7FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2FA1E) && (c <= 0X2FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X30000) && (c <= 0X3FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X40000) && (c <= 0X4FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X50000) && (c <= 0X5FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X60000) && (c <= 0X6FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X70000) && (c <= 0X7FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X80000) && (c <= 0X8FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X90000) && (c <= 0X9FFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XA0000) && (c <= 0XAFFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XB0000) && (c <= 0XBFFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XC0000) && (c <= 0XCFFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XD0000) && (c <= 0XDFFFD):
-		return true
+		return true, newProhibitError(c)
 	case c == 0XE0000:
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XE0002) && (c <= 0XE001F):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XE0080) && (c <= 0XEFFFD):
-		return true
+		return true, newProhibitError(c)
 
 	//https://tools.ietf.org/html/rfc4518#section-2.4 RFC3454 Table C.3
 	case (c >= 0XE000) && (c <= 0XF8FF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XF0000) && (c <= 0XFFFFD):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X100000) && (c <= 0X10FFFD):
-		return true
+		return true, newProhibitError(c)
 
 	//https://tools.ietf.org/html/rfc4518#section-2.4 RFC3454 Table C.4
 	case (c >= 0XFDD0) && (c <= 0XFDEF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFFE) && (c <= 0XFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X1FFFE) && (c <= 0X1FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X2FFFE) && (c <= 0X2FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X3FFFE) && (c <= 0X3FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X4FFFE) && (c <= 0X4FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X5FFFE) && (c <= 0X5FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X6FFFE) && (c <= 0X6FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X7FFFE) && (c <= 0X7FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X8FFFE) && (c <= 0X8FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X9FFFE) && (c <= 0X9FFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XAFFFE) && (c <= 0XAFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XBFFFE) && (c <= 0XBFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XCFFFE) && (c <= 0XCFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XDFFFE) && (c <= 0XDFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XEFFFE) && (c <= 0XEFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0XFFFFE) && (c <= 0XFFFFF):
-		return true
+		return true, newProhibitError(c)
 	case (c >= 0X10FFFE) && (c <= 0X10FFFF):
-		return true
+		return true, newProhibitError(c)
 
 	//https://tools.ietf.org/html/rfc4518#section-2.4 RFC3454 Table C.5
 	case (c >= 0XD800) && (c <= 0XDFFF):
-		return true
+		return true, newProhibitError(c)
 
 	//https://tools.ietf.org/html/rfc4518#section-2.4 RFC3454 Table C.8
 	case c == 0X0340:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X0341:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X200E:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X200F:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X202A:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X202B:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X202C:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X202D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X202E:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206A:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206B:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206C:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206D:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206E:
-		return true
+		return true, newProhibitError(c)
 	case c == 0X206F:
-		return true
+		return true, newProhibitError(c)
 
 	//https://tools.ietf.org/html/rfc4518#section-2.4 The REPLACEMENT CHARACTER (U+FFFD)
 	case c == 0XFFFD:
-		return true
+		return true, newProhibitError(c)
 
 	default:
-		return false
+		return false, nil
 	}
 }
 
