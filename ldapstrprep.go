@@ -58,6 +58,7 @@ Note: To transcode non-Unicode string value to string, such as ut8string to stri
 package ldapstrprep
 
 import (
+	"fmt"
 	"golang.org/x/text/unicode/norm"
 )
 
@@ -154,6 +155,11 @@ func IsProhibited(src []rune) bool {
 		}
 	}
 	return false
+}
+
+//newProhibitError generate prohibited character Error.
+func newProhibitError(c rune) error {
+	return fmt.Errorf("ldapstrprep: %#U is prohibit character", c)
 }
 
 //isProhibitedCharacter reports whether c is prohibited code points.
