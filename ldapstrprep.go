@@ -19,7 +19,7 @@ Note: To transcode non-Unicode string value to string, such as ut8string to stri
 
 4)  Prohibit
 
-  func IsProhibited(src []rune) bool
+  func IsProhibited(src []rune) (b bool, err error)
 
 5)  Check bidi
 
