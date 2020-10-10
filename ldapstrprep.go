@@ -148,13 +148,14 @@ func MapCharacters(src []rune, caseFolding bool) []rune {
 
 //IsProhibited reports whether src contains prohibited code points.
 //https://tools.ietf.org/html/rfc4518#section-2.4
-func IsProhibited(src []rune) bool {
+func IsProhibited(src []rune) (b bool, err error) {
+	isProhibited := false
 	for _, c := range src {
-		if isProhibitedCharacter(c) {
-			return true
+		if isProhibited, err = isProhibitedCharacter(c); err != nil {
+			return isProhibited, err
 		}
 	}
-	return false
+	return isProhibited, nil
 }
 
 //newProhibitError generate prohibited character Error.
