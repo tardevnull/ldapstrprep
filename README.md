@@ -3,4 +3,4 @@ This library provides an implementation of Lightweight Directory Access Protocol
 
 
 # Examples
-https://play.golang.org/p/1hhMdQ-E4zS
+https://play.golang.org/p/2HFvgEOQ_nH
