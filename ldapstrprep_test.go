@@ -28,28 +28,34 @@ func TestNormalize(t *testing.T) {
 
 func TestIsProhibited(t *testing.T) {
 	type args struct {
-		source []rune
+		src []rune
 	}
 	tests := []struct {
-		name string
-		args args
-		want bool
+		name    string
+		args    args
+		wantB   bool
+		wantErr bool
 	}{
-		{"TestCase:U+0061 U+0221", args{[]rune("\U00000061\U00000221")}, true},
-		{"TestCase:U+0061 U+E000", args{[]rune("\U00000061\U0000E000")}, true},
-		{"TestCase:U+0061 U+FDD0", args{[]rune("\U00000061\U0000FDD0")}, true},
-		{"TestCase:U+0061 U+0340", args{[]rune("\U00000061\U00000340")}, true},
-		{"TestCase:U+0061 U+D800", args{[]rune{rune('\U00000061'), rune(0XD800)}}, true},
-		{"TestCase:U+0061 U+FFFD", args{[]rune("\U00000061\U0000FFFD")}, true},
-		{"TestCase:U+0221 U+E000 U+FDD0 U+0340 U+FFFD U+D800", args{append([]rune("\U00000221\U0000E000\U0000FDD0\U00000340\U0000FFFD"), rune(0XD800))}, true},
-		{"TestCase:U+0061 U+0221 U+0062", args{[]rune("\U00000061\U00000221\U00000062")}, true},
-		{"TestCase:U+0061 U+0062", args{[]rune("\U00000061\U00000062")}, false},
-		{"TestCase:nil", args{[]rune(nil)}, false},
+		{"TestCase:U+0061 U+0221", args{[]rune("\U00000061\U00000221")}, true, true},
+		{"TestCase:U+0061 U+E000", args{[]rune("\U00000061\U0000E000")}, true, true},
+		{"TestCase:U+0061 U+FDD0", args{[]rune("\U00000061\U0000FDD0")}, true, true},
+		{"TestCase:U+0061 U+0340", args{[]rune("\U00000061\U00000340")}, true, true},
+		{"TestCase:U+0061 U+D800", args{[]rune{rune('\U00000061'), rune(0XD800)}}, true, true},
+		{"TestCase:U+0061 U+FFFD", args{[]rune("\U00000061\U0000FFFD")}, true, true},
+		{"TestCase:U+0221 U+E000 U+FDD0 U+0340 U+FFFD U+D800", args{append([]rune("\U00000221\U0000E000\U0000FDD0\U00000340\U0000FFFD"), rune(0XD800))}, true, true},
+		{"TestCase:U+0061 U+0221 U+0062", args{[]rune("\U00000061\U00000221\U00000062")}, true, true},
+		{"TestCase:U+0061 U+0062", args{[]rune("\U00000061\U00000062")}, false, false},
+		{"TestCase:nil", args{[]rune(nil)}, false, false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := IsProhibited(tt.args.source); got != tt.want {
-				t.Errorf("IsProhibited() = %v, want %v", got, tt.want)
+			gotB, err := IsProhibited(tt.args.src)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("IsProhibited() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if gotB != tt.wantB {
+				t.Errorf("IsProhibited() gotB = %v, want %v", gotB, tt.wantB)
 			}
 		})
 	}
